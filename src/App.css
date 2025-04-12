@@ -4,22 +4,59 @@
   --yellow: #F9C65F;
   --mint: #A6D49C;
   --light-pink: #FDC2BE;
-  --outline-color: #753851;
+  --border-color: #753851;
+  --whitish: #FFEDD6;
 
-  --outline-stroke: 5px;
+  --border-stroke: 5px;
   --taskbar-height: 70px;
+
+  --window-border-radius: 18px;
+  --window-padding: 18px;
+  --window-title-bar-height: 56px;
+
+  --spacing: 1rem;
+
+  color: var(--border-color);
+}
+
+body {
+  cursor: url('/cursor_arrow.svg'), auto;
 }
 
 
 .app-desktop {
   background-color: var(--light-pink);
   width: 100vw;
-  height: calc(100vh - (var(--taskbar-height) + var(--outline-stroke)));
+  height: calc(100vh - var(--taskbar-height));
 }
 
 .app-taskbar {
   height: var(--taskbar-height);
   width: 100vw;
   background-color: var(--yellow);
-  border-top: 5px solid var(--outline-color);
+  border-top: var(--border-stroke) solid var(--border-color);
+  border-bottom: 0;
+}
+
+.window {
+  /* min-width: 314px;
+  min-height: 155px; */
+  /* background-color: #753851; */
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.progress-segment {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #994c63;
+  border-radius: 4px;
+}
+
+.progress-segment.filled {
+  background-color: #ff9966; /* Orange */
 }
