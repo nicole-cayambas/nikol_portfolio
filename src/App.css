@@ -1,0 +1,25 @@
+:root {
+  --red: #DB423D;
+  --orange: #FF7D4E;
+  --yellow: #F9C65F;
+  --mint: #A6D49C;
+  --light-pink: #FDC2BE;
+  --outline-color: #753851;
+
+  --outline-stroke: 5px;
+  --taskbar-height: 70px;
+}
+
+
+.app-desktop {
+  background-color: var(--light-pink);
+  width: 100vw;
+  height: calc(100vh - (var(--taskbar-height) + var(--outline-stroke)));
+}
+
+.app-taskbar {
+  height: var(--taskbar-height);
+  width: 100vw;
+  background-color: var(--yellow);
+  border-top: 5px solid var(--outline-color);
+}
