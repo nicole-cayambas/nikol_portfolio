@@ -1,5 +1,6 @@
 import AboutMe from "./components/windows/AboutMe";
 import Skills from "./components/windows/Skills";
+import Works from "./components/windows/Works";
 
 export const titleBarHeight = "56px";
 export const maxWindowWidth = "600px";
@@ -21,7 +22,7 @@ export const programsConfig = [
     title: "About Me",
     type: "program",
     component: AboutMe,
-    isOpen: true,
+    isOpen: false,
     color: "red",
     position: { x: 615, y: 154 },
     zIndex: 1,
@@ -31,13 +32,13 @@ export const programsConfig = [
   },
   {
     id: "skills",
-    title: "Skills and Tools",
+    title: "Skills & Tools",
     type: "program",
     component: Skills,
-    isOpen: true,
+    isOpen: false,
     color: "whitish",
     position: { x: 870, y: 136 },
-    zIndex: 100,
+    zIndex: 5,
     shortcut: "🧰",
     width: maxWindowWidth,
     height: maxWindowHeight,
@@ -46,21 +47,21 @@ export const programsConfig = [
     id: "myWorks",
     title: "My Works",
     type: "program",
-    component: null,
-    isOpen: true,
+    component: Works,
+    isOpen: false,
     color: "mint",
-    position: { x: 570, y: 36 },
+    position: { x: 180, y: 36 },
     zIndex: 1,
     shortcut: "🧱",
-    width: maxWindowWidth,
-    height: maxWindowHeight,
+    width: "1000px",
+    height: "600px",
   },
   {
     id: "contact",
     title: "Contact",
     type: "program",
     component: null,
-    isOpen: true,
+    isOpen: false,
     color: "yellow",
     position: { x: 228, y: 10 },
     zIndex: 1,
@@ -73,7 +74,7 @@ export const programsConfig = [
     title: "Work in progress",
     type: "folder",
     component: null,
-    isOpen: true,
+    isOpen: false,
     color: "orange",
     position: { x: 335, y: 70 },
     zIndex: 1,
@@ -84,7 +85,7 @@ export const programsConfig = [
 ];
 
 export const skillsConfig = {
-  programming: [
+  coding: [
     {
       name: "PHP",
       level: 10, // out of 10
@@ -109,3 +110,21 @@ export const skillsConfig = {
     },
   ],
 };
+
+export const worksConfig = [
+  {
+    name: "Alienor",
+    link: "https://alienor.org",
+    image: "alienor.png",
+  },
+  {
+    name: "Recruitment",
+    link: "https://nmsrecruitment.nmsapps.com",
+    image: "recruitment.png",
+  },
+  {
+    name: "Club Thermal",
+    link: "https://www.club-thermal.com",
+    image: "lct.png",
+  },
+];

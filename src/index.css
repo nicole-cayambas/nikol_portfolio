@@ -51,6 +51,7 @@ input {
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 body.dragging {
@@ -69,6 +70,12 @@ button {
 .hand-cursor *,
 .hand-cursor svg,
 .hand-cursor svg *,
-button {
+button,
+a {
   cursor: url("/hand_cursor.png") 0 20, url("/cursor_arrow.svg"), auto !important;
+}
+
+a {
+  text-decoration: none;
+  color: var(--border-color);
 }

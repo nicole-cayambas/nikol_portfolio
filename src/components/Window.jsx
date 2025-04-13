@@ -109,11 +109,10 @@ const Window = ({
   };
 
   const maximizeWindow = () => {
+    setPosition({ x: 10, y: 10 });
     setWindows((prev) =>
       prev.map((w) =>
-        w.id === window.id
-          ? { ...w, width: maxWindowWidth, height: maxWindowHeight }
-          : w
+        w.id === window.id ? { ...w, width: "95vw", height: "85vh" } : w
       )
     );
   };

@@ -1,11 +1,18 @@
-import React from 'react'
-import BaseButton from './BaseButton'
+import React from "react";
+import BaseButton from "./BaseButton";
 
-const MinimizeButton = ({styles = {}, ...props}) => {
-    
+const MinimizeButton = ({ styles = {}, ...props }) => {
   return (
-    <BaseButton styles={{...styles, backgroundColor: "var(--yellow)"}} {...props}/>
-  )
-}
+    <BaseButton
+      styles={{
+        ...styles,
+        backgroundColor: "var(--yellow)",
+      }}
+      {...props}
+    >
+      <img src="./minimize_icon.png" />
+    </BaseButton>
+  );
+};
 
-export default MinimizeButton
+export default MinimizeButton;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { skillsConfig } from "../../config";
 
 const Skills = () => {
-  const [tab, setTab] = useState("programming");
+  const [tab, setTab] = useState("coding");
   return (
     <div className="window-content-container relative h-[90%]">
       <div className="flex flex-row gap-[6px] mb-[2rem]">
