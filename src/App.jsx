@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Window from "./components/Window";
 import Taskbar from "./components/Taskbar";
-import AboutMe from "./components/windows/AboutMe";
 import { programsConfig } from "./config";
 
 function App() {
@@ -14,8 +13,13 @@ function App() {
 
   const openWindow = (e, window) => {
     e.preventDefault();
+    topZIndex.current += 1;
     setWindowState((prev) =>
-      prev.map((w) => (w.id === window.id ? { ...w, isOpen: true } : w))
+      prev.map((w) =>
+        w.id === window.id
+          ? { ...w, isOpen: true, zIndex: topZIndex.current }
+          : w
+      )
     );
   };
 

@@ -55,11 +55,14 @@ body {
 
 body.dragging {
   user-select: none;
-  cursor: grabbing;
 }
 
 body {
   cursor: url("/cursor_arrow.svg"), auto;
+}
+
+button {
+  all: unset;
 }
 
 .hand-cursor,

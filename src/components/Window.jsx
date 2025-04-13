@@ -1,11 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import CloseButton from "./buttons/CloseBtn";
 import MinimizeButton from "./buttons/MinimizeBtn";
 import MaximizeButton from "./buttons/MaximizeBtn";
-
-const titleBarHeight = "56px";
-const maxWindowWidth = "600px";
-const maxWindowHeight = "500px";
+import { maxWindowHeight, maxWindowWidth, titleBarHeight } from "../config";
 
 export const WindowTitleBar = ({
   width = "314px",
@@ -130,8 +127,8 @@ const Window = ({
         height: window.height,
         transform: `translate(${position.x}px, ${position.y}px)`,
         transition: isDragging.current ? "none" : "transform 0.1s ease-out",
-        // cursor: isDragging.current ? "grabbing" : "grab",
         backgroundColor: "var(--desktop-background-color)",
+        boxShadow: "-4px 3px 0 var(--border-color)",
       }}
     >
       <WindowTitleBar
@@ -143,7 +140,9 @@ const Window = ({
       >
         {window.title}
       </WindowTitleBar>
-      <div className="p-(--window-padding) mt-[56px]">{children}</div>
+      <div className="p-(--window-padding) mt-[56px] h-[calc(100%)]">
+        {children}
+      </div>
     </div>
   ) : (
     <></>
