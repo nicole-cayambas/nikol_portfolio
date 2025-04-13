@@ -1,11 +1,11 @@
 :root {
-  --red: #DB423D;
-  --orange: #FF7D4E;
-  --yellow: #F9C65F;
-  --mint: #A6D49C;
-  --light-pink: #FDC2BE;
+  --red: #db423d;
+  --orange: #ff7d4e;
+  --yellow: #f9c65f;
+  --mint: #a6d49c;
+  --light-pink: #fdc2be;
   --border-color: #753851;
-  --whitish: #FFEDD6;
+  --whitish: #ffedd6;
 
   --border-stroke: 5px;
   --taskbar-height: 70px;
@@ -18,11 +18,6 @@
 
   color: var(--border-color);
 }
-
-body {
-  cursor: url('/cursor_arrow.svg'), auto;
-}
-
 
 .app-desktop {
   background-color: var(--light-pink);

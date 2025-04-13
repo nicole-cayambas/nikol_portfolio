@@ -23,6 +23,9 @@ export default {
         56: "14rem",
         64: "16rem",
       },
+      cursor: {
+        hand: 'url("/hand_cursor.png"), pointer',
+      },
     },
   },
   plugins: [],

@@ -32,10 +32,10 @@ const Taskbar = () => {
   return (
     <div className="app-taskbar flex flex-row items-center">
       <div className="flex flex-row items-center flex-1">
-        <FolderIcon fill="var(--whitish)" />
-        <FolderIcon fill="var(--orange)" />
-        <FolderIcon fill="var(--mint)" />
-        <FolderIcon fill="var(--light-pink)" />
+        <FolderIcon fill="var(--whitish)" isClickable={true} />
+        <FolderIcon fill="var(--orange)" isClickable={true} />
+        <FolderIcon fill="var(--mint)" isClickable={true} />
+        <FolderIcon fill="var(--light-pink)" isClickable={true} />
       </div>
       <div className="flex flex-row items-center flex-4 justify-end">
         <Textfield />

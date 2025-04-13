@@ -6,10 +6,12 @@ export const FolderIcon = ({
   width = defaultIconSize,
   height = defaultIconSize,
   fill = "none",
+  isClickable = false,
   ...props
 }) => (
-  <BaseIcon>
+  <BaseIcon isClickable={isClickable}>
     <svg
+      className={isClickable ? "hand-cursor" : ""}
       viewBox="0 0 65 54"
       xmlns="http://www.w3.org/2000/svg"
       width={width}
@@ -31,8 +33,12 @@ export const FolderIcon = ({
   </BaseIcon>
 );
 
-const BaseIcon = ({ children }) => {
-  return <div className="mx-[12px]">{children}</div>;
+const BaseIcon = ({ isClickable, children }) => {
+  return (
+    <a className={isClickable ? "mx-[12px]" : "mx-[12px] hand-cursor"}>
+      {children}
+    </a>
+  );
 };
 
 export default BaseIcon;

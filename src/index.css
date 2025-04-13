@@ -48,3 +48,20 @@ input {
 body {
   margin: 0;
 }
+
+body.dragging {
+  user-select: none;
+  cursor: grabbing;
+}
+
+body {
+  cursor: url("/cursor_arrow.svg"), auto;
+}
+
+.hand-cursor,
+.hand-cursor *,
+.hand-cursor svg,
+.hand-cursor svg *,
+button {
+  cursor: url("/hand_cursor.png") 0 28, url("/cursor_arrow.svg"), auto !important;
+}

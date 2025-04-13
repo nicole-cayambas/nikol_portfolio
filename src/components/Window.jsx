@@ -53,6 +53,7 @@ const Window = ({
   const offset = useRef({ x: 0, y: 0 });
 
   const handleMouseDown = (e) => {
+    e.preventDefault(); // Prevent text selection
     isDragging.current = true;
     offset.current = {
       x: e.clientX - e.currentTarget.getBoundingClientRect().left,
@@ -60,6 +61,7 @@ const Window = ({
     };
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
+    document.body.classList.add("dragging");
   };
 
   const handleMouseMove = (e) => {
@@ -92,6 +94,7 @@ const Window = ({
     isDragging.current = false;
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mouseup", handleMouseUp);
+    document.body.classList.remove("dragging");
   };
 
   const closeWindow = () => {
@@ -109,7 +112,7 @@ const Window = ({
         height: height,
         transform: `translate(${position.x}px, ${position.y}px)`,
         transition: isDragging.current ? "none" : "transform 0.1s ease-out",
-        cursor: isDragging.current ? "grabbing" : "grab",
+        // cursor: isDragging.current ? "grabbing" : "grab",
       }}
     >
       <WindowTitleBar
