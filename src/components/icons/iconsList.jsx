@@ -35,9 +35,9 @@ export const FolderIcon = ({
 
 const BaseIcon = ({ isClickable, children }) => {
   return (
-    <a className={isClickable ? "mx-[12px]" : "mx-[12px] hand-cursor"}>
+    <div className={isClickable ? "mx-[12px]" : "mx-[12px] hand-cursor"}>
       {children}
-    </a>
+    </div>
   );
 };
 

@@ -1,26 +1,5 @@
-:root {
-  --red: #db423d;
-  --orange: #ff7d4e;
-  --yellow: #f9c65f;
-  --mint: #a6d49c;
-  --light-pink: #fdc2be;
-  --border-color: #753851;
-  --whitish: #ffedd6;
-
-  --border-stroke: 5px;
-  --taskbar-height: 70px;
-
-  --window-border-radius: 18px;
-  --window-padding: 18px;
-  --window-title-bar-height: 56px;
-
-  --spacing: 1rem;
-
-  color: var(--border-color);
-}
-
 .app-desktop {
-  background-color: var(--light-pink);
+  background-color: var(--desktop-background-color);
   width: 100vw;
   height: calc(100vh - var(--taskbar-height));
 }

@@ -4,12 +4,14 @@ import MinimizeButton from "./buttons/MinimizeBtn";
 import MaximizeButton from "./buttons/MaximizeBtn";
 
 const titleBarHeight = "56px";
+const maxWindowWidth = "600px";
+const maxWindowHeight = "500px";
 
 export const WindowTitleBar = ({
   width = "314px",
   color = "orange",
   closeWindow,
-  minimizeWindow,
+  maximizeWindow,
   children,
   ...props
 }) => {
@@ -29,8 +31,8 @@ export const WindowTitleBar = ({
     >
       <span className="">{children}</span>
       <div className="flex flex-row justify-center gap-[6px]">
-        <MinimizeButton onClick={minimizeWindow} />
-        <MaximizeButton />
+        <MinimizeButton onClick={closeWindow} />
+        <MaximizeButton onClick={maximizeWindow} />
         <CloseButton onClick={closeWindow} />
       </div>
     </div>
@@ -40,9 +42,8 @@ export const WindowTitleBar = ({
 const Window = ({
   window = null,
   setWindows,
-  width = "314px",
-  height = "155px",
   windowRef,
+  topZIndex,
   children,
 }) => {
   const [position, setPosition] = useState({
@@ -54,6 +55,12 @@ const Window = ({
 
   const handleMouseDown = (e) => {
     e.preventDefault(); // Prevent text selection
+    topZIndex.current += 1;
+    setWindows((prev) =>
+      prev.map((w) =>
+        w.id === window.id ? { ...w, zIndex: topZIndex.current } : w
+      )
+    );
     isDragging.current = true;
     offset.current = {
       x: e.clientX - e.currentTarget.getBoundingClientRect().left,
@@ -73,8 +80,8 @@ const Window = ({
     const containerWidth = rect.width;
     const containerHeight = rect.height;
 
-    const windowWidth = parseInt(width);
-    const windowHeight = parseInt(height);
+    const windowWidth = parseInt(window.width);
+    const windowHeight = parseInt(window.height);
     const padding = 10;
 
     const maxX = containerWidth - windowWidth - padding;
@@ -104,21 +111,35 @@ const Window = ({
     );
   };
 
+  const maximizeWindow = () => {
+    setWindows((prev) =>
+      prev.map((w) =>
+        w.id === window.id
+          ? { ...w, width: maxWindowWidth, height: maxWindowHeight }
+          : w
+      )
+    );
+  };
+
   return window && window.isOpen ? (
     <div
       className="border-(length:--border-stroke) border-(--border-color) rounded-(--window-border-radius) absolute"
       style={{
-        width: width,
-        height: height,
+        zIndex: window.zIndex,
+        width: window.width,
+        height: window.height,
         transform: `translate(${position.x}px, ${position.y}px)`,
         transition: isDragging.current ? "none" : "transform 0.1s ease-out",
         // cursor: isDragging.current ? "grabbing" : "grab",
+        backgroundColor: "var(--desktop-background-color)",
       }}
     >
       <WindowTitleBar
         onMouseDown={handleMouseDown}
         closeWindow={closeWindow}
         color={window.color}
+        maximizeWindow={maximizeWindow}
+        width={window.width}
       >
         {window.title}
       </WindowTitleBar>

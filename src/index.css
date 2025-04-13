@@ -22,6 +22,10 @@
   --window-padding: 18px;
   --window-title-bar-height: 56px;
 
+  --spacing: 1rem;
+
+  --desktop-background-color: var(--light-pink);
+
   color: var(--border-color);
 
   /* color-scheme: light dark;
@@ -63,5 +67,5 @@ body {
 .hand-cursor svg,
 .hand-cursor svg *,
 button {
-  cursor: url("/hand_cursor.png") 0 28, url("/cursor_arrow.svg"), auto !important;
+  cursor: url("/hand_cursor.png") 0 20, url("/cursor_arrow.svg"), auto !important;
 }
