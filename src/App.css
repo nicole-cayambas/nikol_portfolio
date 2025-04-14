@@ -2,11 +2,24 @@
   background-color: var(--desktop-background-color);
   background-image: url("./images/turtle_yellow.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 20%;
   background-position: center;
   background-blend-mode: multiply;
   width: 100vw;
   height: calc(100vh - var(--taskbar-height));
+  animation: zoomInOut 8s infinite alternate; /* Adds zooming animation */
+}
+
+@keyframes zoomInOut {
+  0% {
+    background-size: 20%; /* Original size */
+  }
+  50% {
+    background-size: 25%; /* Zoom in */
+  }
+  100% {
+    background-size: 20%; /* Zoom back out */
+  }
 }
 
 .app-taskbar {

@@ -25,8 +25,8 @@ const Works = () => {
           style={{ width: "24px", height: "24px" }}
         />
       </div>
-      <div className="works-container w-[100%] flex flex-row">
-        <div className="flex flex-row gap-[1rem] flex-wrap w-[100%] items-center flex-3">
+      <div className="works-container w-[100%] h-[70%] flex flex-row">
+        <div className="flex flex-row gap-[1rem] flex-wrap w-[100%] items-start flex-3">
           {worksConfig.map((work, key) => {
             return (
               <Tooltip text={"Double click to open link"}>
