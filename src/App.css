@@ -1,5 +1,10 @@
 .app-desktop {
   background-color: var(--desktop-background-color);
+  background-image: url("./images/turtle_yellow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-blend-mode: multiply;
   width: 100vw;
   height: calc(100vh - var(--taskbar-height));
 }
