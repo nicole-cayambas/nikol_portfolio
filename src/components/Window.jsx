@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import CloseButton from "./buttons/CloseBtn";
 import MinimizeButton from "./buttons/MinimizeBtn";
 import MaximizeButton from "./buttons/MaximizeBtn";
-import { maxWindowHeight, maxWindowWidth, titleBarHeight } from "../config";
+import { maxWindowHeight, maxWindowWidth, titleBarHeight, programsConfig } from "../config";
 
 export const WindowTitleBar = ({
   width = "314px",
@@ -104,7 +104,7 @@ const Window = ({
   const closeWindow = () => {
     if (!window.isOpen) return;
     setWindows((prev) =>
-      prev.map((w) => (w.id === window.id ? { ...w, isOpen: false } : w))
+      prev.map((w) => (w.id === window.id ? { ...programsConfig.find(p => p.id === w.id), isOpen: false } : w))
     );
   };
 
@@ -123,7 +123,7 @@ const Window = ({
       style={{
         zIndex: window.zIndex,
         width: window.width,
-        height: window.height,
+        minHeight: window.height,
         transform: `translate(${position.x}px, ${position.y}px)`,
         transition: isDragging.current ? "none" : "transform 0.1s ease-out",
         backgroundColor: "var(--desktop-background-color)",

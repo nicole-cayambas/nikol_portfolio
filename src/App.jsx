@@ -51,10 +51,10 @@ function App() {
               windowRef={windowRef}
               topZIndex={topZIndex}
             >
-              {Child && <Child />}
+              {Child && <Child key={window.id}/>}
             </Window>
           ) : (
-            <></>
+            <div key={window.id}></div>
           );
         })}
       </div>

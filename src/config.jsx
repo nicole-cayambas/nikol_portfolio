@@ -1,4 +1,5 @@
 import AboutMe from "./components/windows/AboutMe";
+import Contact from "./components/windows/Contact";
 import Skills from "./components/windows/Skills";
 import Works from "./components/windows/Works";
 
@@ -60,7 +61,7 @@ export const programsConfig = [
     id: "contact",
     title: "Contact",
     type: "program",
-    component: null,
+    component: Contact,
     isOpen: false,
     color: "yellow",
     position: { x: 228, y: 10 },
@@ -87,26 +88,56 @@ export const programsConfig = [
 export const skillsConfig = {
   coding: [
     {
-      name: "PHP",
-      level: 10, // out of 10
+      name: "Php",
       years: 5, // modify based on year started
+      logo: 'images/php.png'
     },
     {
-      name: "Javascript",
-      level: 10, // out of 10
+      name: "Laravel",
       years: 5, // modify based on year started
+      logo: 'images/laravel.png'
+    },
+    {
+      name: "Zend/Laminas",
+      years: 5, // modify based on year started
+      logo: 'images/laminas.png'
+    },
+    {
+      name: "JavaScript",
+      years: 5, // modify based on year started
+      logo: 'images/javascript.png'
+    },
+    {
+      name: "React",
+      years: 5, // modify based on year started
+      logo: 'images/react.png'
+    },
+    {
+      name: "Node",
+      years: 5, // modify based on year started
+      logo: 'images/node.png'
+    },
+    {
+      name: "Material UI",
+      years: 5, // modify based on year started
+      logo: 'images/mui.png'
+    },
+    {
+      name: "jQuery",
+      years: 5, // modify based on year started
+      logo: 'images/jquery.png'
     },
   ],
   design: [
     {
       name: "Figma",
-      level: 3,
       years: "<1",
+      logo: 'images/figma.png'
     },
     {
       name: "Photoshop",
-      level: 8,
       years: "10",
+      logo: 'images/photoshop.png'
     },
   ],
 };
@@ -126,5 +157,10 @@ export const worksConfig = [
     name: "Club Thermal",
     link: "https://www.club-thermal.com",
     image: "lct.png",
+  },
+  {
+    name: "CMA Taxi",
+    link: "https://www.exament3p.fr",
+    image: "cma.png",
   },
 ];
