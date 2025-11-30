@@ -2,6 +2,7 @@ import AboutMe from "./components/windows/AboutMe";
 import Contact from "./components/windows/Contact";
 import Skills from "./components/windows/Skills";
 import Works from "./components/windows/Works";
+import LargeAutocomplete from "./mini-projects/LargeAutocomplete";
 
 export const titleBarHeight = "56px";
 export const maxWindowWidth = "600px";
@@ -80,6 +81,19 @@ export const programsConfig = [
     position: { x: 335, y: 70 },
     zIndex: 1,
     shortcut: "👷‍♂️",
+    width: maxWindowWidth,
+    height: maxWindowHeight,
+  },
+  {
+    id: "largeAutocomplete",
+    title: "Large Autocomplete",
+    type: "program",
+    component: LargeAutocomplete,
+    isOpen: false,
+    color: "mint",
+    position: { x: 435, y: 100 },
+    zIndex: 1,
+    shortcut: "🔍",
     width: maxWindowWidth,
     height: maxWindowHeight,
   },
